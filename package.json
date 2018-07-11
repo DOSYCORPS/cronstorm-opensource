@@ -1,0 +1,43 @@
+{
+  "name": "pw-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "watch": {
+    "start": {
+      "patterns": [
+        "*"
+      ],
+      "extensions": "js,html,css",
+      "quiet": false
+    },
+    "dev": {
+      "patterns": [
+        "*"
+      ],
+      "extensions": "js,html,css",
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "prestart": "node sm.js",
+    "start": "node index.js",
+    "watch": "npm-watch",
+    "dev": "node index.js",
+    "test": "npm run watch dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dosaygo.com:/home/git/pa-dataentry-client-ui"
+  },
+  "author": "@dosy",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "npm-watch": "^0.3.0",
+    "path": "^0.12.7",
+    "stripe": "^6.1.1",
+    "url": "^0.11.0"
+  },
+  "description": ""
+}

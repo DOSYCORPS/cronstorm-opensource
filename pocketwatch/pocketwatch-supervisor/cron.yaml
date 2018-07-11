@@ -1,0 +1,5 @@
+version: 1
+cron:
+ - name: "check-supervision"
+   url: "/check-supervision"
+   schedule: "* * * * *"

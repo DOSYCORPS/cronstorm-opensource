@@ -1,0 +1,19 @@
+{
+  "name": "pocketwatch-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dosaygo.com:/home/git/pocketwatch-cache"
+  },
+  "author": "@dosy",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "redis": "^2.8.0"
+  }
+}

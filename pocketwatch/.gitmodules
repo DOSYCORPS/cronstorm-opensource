@@ -1,0 +1,9 @@
+[submodule "pocketwatch-mechanism"]
+	path = pocketwatch-mechanism
+	url = git@git.dosaygo.com:/home/git/pocketwatch-mechanism
+[submodule "gstore"]
+	path = gstore
+	url = git@git.dosaygo.com:/home/git/gstore
+[submodule "pocketwatch-supervisor"]
+	path = pocketwatch-supervisor
+	url = git@git.dosaygo.com:/home/git/pocketwatch-supervisor

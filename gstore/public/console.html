@@ -1,0 +1,23 @@
+<form method=POST action=save/testns/testkind/ target=save_output>
+  <p>
+    <input type=hidden name=apikey value="api key for special access to gstore from pocketwatch">
+    <input name=firstname value=Cris>
+    <input name=lastname value=Stringfellow>
+    <input type=number name=age value=34>
+    <button>Save</button>
+  <p>
+    <iframe name=save_output></iframe>
+</form>
+<form method=GET action=query/testns/testkind/ target=query_output>
+  <script>
+    document.currentScript.parentElement.addEventListener('submit',function () {
+      this.q.value = JSON.stringify(eval(`(function(){ return ${this.q.value};}())`));
+    }, { useCapture: true });
+  </script>
+  <p>
+    <input type=hidden name=apikey value="api key for special access to gstore from pocketwatch">
+    <textarea name=q placeholder=query_string>{lines:[]}</textarea>
+    <button>Query</button>
+  <p>
+    <iframe name=query_output></iframe>
+</form>

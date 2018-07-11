@@ -1,0 +1,2 @@
+- we are adding intervals to supervision task queue even if they are already present. 
+- this is not good

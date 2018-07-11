@@ -1,0 +1,113 @@
+main {
+  background: darkkhaki;
+  margin: 0 auto;
+  width: 80%;
+  min-width: 320px;
+  margin-bottom: 3rem;
+}
+form {
+  display: table;
+  margin:2rem auto;
+}
+main header {
+  background: khaki;
+  color: forestgreen;
+  font-family: sans-serif;
+}
+main > * {
+  padding: 0 0.25rem;
+}
+main header h1 {
+  margin: 0;
+}
+h1 a {
+  color: inherit;
+}
+main header h1 a {
+  text-decoration: none;
+}
+section.stories {
+  padding: 1rem 2rem;
+  background: white;
+}
+footer {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+.txcent {
+  text-align: center;
+}
+.classy {
+  font-family: serif;
+}
+.byline {
+  color: lemonchiffon;
+}
+fieldset {
+  margin: 0 auto;
+}
+form, fieldset  {
+  display: table;
+  position: relative;
+  max-width: 90vw !important;
+}
+@media screen and (min-width: 777px) {
+  main {
+    min-width: 650px;
+  }
+  form {
+     min-width: 630px;
+  }
+  form p {
+    position: relative;
+  }
+  label {
+    width: 180px;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+    padding: 5px 0;
+  }
+  label > *, label + * {
+    position: absolute;
+    left: 200px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: auto;
+  }
+  label:not(:only-child) > * { 
+    width: 80px;
+  }
+  label + * {
+    left: 300px;
+  }
+}
+@media screen and (max-width: 777px) {
+  header h1 {
+    text-align: center;
+  }
+  label, input, select{
+    position: relative;
+    display: inline-block;
+    max-width: 80vw;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+  }
+}
+span.icon {
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 0.2rem;
+  font-size: 90%;
+}
+.light {
+  color: silver;
+  font-size: 80%;
+  font-style: italic;
+}
+a.no-link-style:link, a.no-link-style:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}

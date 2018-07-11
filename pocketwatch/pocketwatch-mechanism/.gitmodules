@@ -1,0 +1,3 @@
+[submodule "pocketwatch-cache"]
+	path = pocketwatch-cache
+	url = git@git.dosaygo.com:/home/git/pocketwatch-cache

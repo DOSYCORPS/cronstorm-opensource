@@ -1,0 +1,87 @@
+:root {
+  font-family: Times, serif;
+}
+body {
+  background: linear-gradient(aquamarine, dodgerblue);
+}
+header {
+  text-align: center;
+}
+main {
+  display: table;
+  margin: 0 auto;
+  max-width: 85vw;
+  min-width: 280px;
+  background: white;
+  margin-bottom: 30vh;
+  padding: 0 1rem;
+  box-shadow: 0 1px 0 1px grey;
+}
+table {
+  margin: 0 auto;
+}
+.txcent {
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+section {
+  margin-top: 2rem;
+}
+input[type=radio]:nth-of-type(1):checked ~ table.plans th:nth-of-type(1) {
+  background: dodgerblue;
+}
+input[type=radio]:nth-of-type(2):checked ~ table.plans th:nth-of-type(2) {
+  background: dodgerblue;
+}
+input[type=radio]:nth-of-type(3):checked ~ table.plans th:nth-of-type(3) {
+  background: dodgerblue;
+}
+button {
+  font-family: serif;
+}
+button.cta {
+  padding: 0;
+}
+button.cta label {
+  padding: 1px 6px;
+}
+button.main-cta {
+  background: linear-gradient(aquamarine, dodgerblue);
+}
+header {
+  font-family: Georgia;
+}
+section.info header,
+section.sell header {
+  font-family: "Times New Roman";
+}
+footer {
+  margin-bottom: 3rem;
+}
+section.sell {
+  font-family: Palatino, Times, serif;
+  text-align: center;
+}
+dl {
+  vertical-align: top;
+  margin: 0 auto;
+  min-width: 250px;
+  display: inline-block;
+  max-width: 400px;
+  width: 80%;
+}
+dl dd {
+  padding-right: 1rem;
+  text-align: left;
+}
+ul.flat {
+  margin-left:1rem;
+  padding-left:0;
+}
+@media screen and (max-width:320px) {
+  main {
+    padding: 0 3px;
+  }
+}

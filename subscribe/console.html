@@ -1,0 +1,56 @@
+<form method=POST action=/v1/timer/new target=_apiout>
+  <fieldset><legend>Form P-8: creation of 1 interval</legend>
+    <p>
+      <input type=text name=apiKey placeholder=apikey>
+    <p>
+      <label>Interval name
+        <input type=text autofocus name=name required size=50 placeholder="what does this interval do?">
+      </label>
+    <p>
+      <label>Call to make
+        <select name=method required>
+          <option value=POST>POST</option>
+          <option value=GET>GET</option>
+        </select>
+      </label>
+      <input type=url name=url required placeholder="my URL">
+    <p>
+      <label>Time between invocations
+        <input type=number step=1.0 min=1.0 max=1000000 name=interval_unit_count required value=1>
+      </label>
+      <select name=interval_unit_type required>
+        <option value=second>seconds</option>
+        <option value=minute>minutes</option>
+        <option value=hour>hours</option>
+        <option value=day>days</option>
+        <option value=week>weeks</option>
+        <option value=month>months</option>
+      </select>
+    <p>
+      <label>Continue for
+        <input type=number step=1.0 min=1.0 max=1000000 name=duration_unit_count required value=2>
+      </label>
+      <select name=duration_unit_type required>
+        <option value=second>seconds</option>
+        <option value=minute selected>minutes</option>
+        <option value=hour>hours</option>
+        <option value=day>days</option>
+        <option value=week>weeks</option>
+        <option value=month>months</option>
+      </select>
+    <hr>
+    <p class=txcent>
+      <button name=action value=console_create>Create</button>
+  </fieldset>
+</form>
+<form method=POST action=/v1/delete/timer target=_apiout>
+  <fieldset><legend>Form P-15: deletion of 1 interval</legend>
+    <p>
+      <input type=text name=apiKey placeholder=apikey>
+    <p>
+      <input type=text name=keyName placeholder=keyName>
+    <p class=txcent>
+      <button name=action value=console_delete>Delete</button>
+  </fieldset>
+</form>
+<iframe name=_apiout></iframe>

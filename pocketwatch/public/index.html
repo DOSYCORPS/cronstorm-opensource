@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport 
+  content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name=keywords content="pocketwatch, call URLs at intervals, webhook">
+<meta name=description content="Pocketwatch can create Timers to run HTTP requests at intervals of 1 second or longer.">
+<title>Pocketwatch</title>
+<style>
+  :root {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(aquamarine, dodgerblue);
+    background-size: cover;
+    min-height: 100%;
+  }
+  iframe#modals_frame {
+    z-index:20000000;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    width:100%;
+    height:100vh;
+    overflow: scroll;
+  }
+  iframe {
+    border: 0;
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  main {
+    padding: 0 3rem;
+    box-shadow: 0px 1px 0px 1px grey;
+    margin-bottom: 5rem;
+  }
+</style>  
+<link rel=stylesheet href=/style.css>
+<iframe id=modals_frame name=modals src=transparent.html></iframe>
+<main>
+  <header>
+    <h1>
+      <a href=https://pocketwatch.xyz/?secure><span class=icon>&#x1f55c;</span>
+        Buy 1 Pocketwatch Timer</a>
+    </h1>
+  </header>
+  <section class=sell>
+    <h1>What is an On-Demand Pocketwatch Timer?</h1>
+    <dl>
+      <dt><h1>Flexible, fine-resolution task scheduling</h1>
+      <dd>
+        <p>
+          On-demand Pocketwatch Timers are schedulers that can issue HTTP requests at intervals as fine as 1 second, or longer.
+        <p>
+          You can use them to:
+        <ul>
+          <li>schedule background tasks, 
+          <li>run jobs, 
+          <li>trigger recurrent workloads,
+        </ul>
+        <p>all the things you might use <code>cron/crontab</code> for, but when you want it more scalable, more fault-tolerant than one machine running <code>cron</code> &mdash; you use Pocketwatch Timers.
+        <p>Just fire and forget.
+      </dd>
+    </dl>
+  </section>
+  <section class=buy-interval>
+    <form target=modals method=POST action=/interval/purchase_flow>
+      <fieldset><legend>Form P-9: purchase of 1 Timer</legend>
+        <input type=hidden name=request_source value="Form P-9: purchase of 1 Timer">
+        <p>
+          <strong>Describe your timer</strong>
+        <p>
+          <label>This timer will
+            <input type=text autofocus name=name required placeholder="do what?">
+          </label>
+        <p>
+          <label>by making a
+            <select name=method required>
+              <option value=GET>GET</option>
+              <option value=POST>POST</option>
+            </select>
+          </label>
+          request to 
+          <input type=url name=url required placeholder="that URL">
+        <p>
+          <label>every
+            <input type=number step=1.0 min=1.0 max=1000000 name=interval_unit_count required value=1>
+          </label>
+          <select name=interval_unit_type required>
+            <option value=second>seconds</option>
+            <option value=minute>minutes</option>
+            <option value=hour>hours</option>
+            <option value=day>days</option>
+            <option value=week>weeks</option>
+            <option value=month>months</option>
+          </select>
+          <label>for the next
+            <input type=number step=1.0 min=1.0 max=1000000 name=duration_unit_count required value=2>
+          </label>
+          <select name=duration_unit_type required>
+            <option value=second>seconds</option>
+            <option value=minute selected>minutes</option>
+            <option value=hour>hours</option>
+            <option value=day>days</option>
+            <option value=week>weeks</option>
+            <option value=month>months</option>
+          </select>
+        <hr>
+        <p class=txcent>
+          <button name=action value=calculate_cost>How much will it cost?</button>
+        <hr>
+        <p class=txcent>
+          or
+          <a href=https://api.pocketwatch.xyz/>Purchase a Monthly Subscription</a> to get many more Timers
+      </fieldset>
+    </form>
+  </section>
+  <footer>
+    <p>
+      <a target=_new href=https://github.com/dosyago-corp/service-issues/issues>Open an Issue</a>
+      <a target=_new href=mailto:criscanbereached+dosy.help@gmail.com?&subject=Dosy+Help+for+Pocketwatch>Email us for help</a>
+    <p>
+      <a target=_new href=https://github.com/dosyago-corp/>The Dosyago Corporation on GitHub</a>
+  </footer>
+</main>
+<script>
+  "use strict";
+  {
+    if ( location.protocol == 'http:' && location.hostname == "pocketwatch.xyz" ) {
+      console.info("Landed on HTTP, redirecting to HTTPS");
+      location.protocol = "https:";
+    }
+  }
+</script>
+

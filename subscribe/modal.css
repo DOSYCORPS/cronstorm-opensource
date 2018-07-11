@@ -1,0 +1,47 @@
+:root {
+  position: relative;
+  background: rgba(192,192,192,0.5);
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+.modal, a, a:link, a:visited {
+  color: #37bbe4;
+}
+.modal {
+  word-break: break-word;
+  display: table;
+  width: 80%;
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 555px;
+  padding: 1rem;
+  position: relative;
+  border: 3px solid;
+  background: #35342f;
+  z-index:100000000;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 5rem auto;
+  overflow: hidden;
+}
+.long {
+  word-break: break-all;
+  display: inline-block;
+}
+.important {
+  font-weight: bold;
+}
+.transparent {
+  opacity: 0;
+}
+.result {
+  color: green;
+  font-weight: bold;
+}
+.fail {
+  color: red;
+}
+.bonus strong {
+  color: green;
+}

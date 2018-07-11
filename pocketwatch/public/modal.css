@@ -1,0 +1,49 @@
+:root {
+  position: relative;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(192,192,192,0.5),
+    rgba(192,192,192,0.5) 20px,
+    transparent 20px,
+    transparent 30px
+  );
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+}
+.modal {
+  word-break: break-word;
+  font-family: Times, serif;
+  display: table;
+  width: 80%;
+  max-width: 555px;
+  padding: 1rem;
+  position: relative;
+  border: 1px solid grey;
+  border-radius: 16px;
+  background-color: white;
+  z-index:100000000;
+  min-width: 100px;
+  min-height: 100px;
+  margin: 5rem auto;
+  overflow: hidden;
+}
+.long {
+  word-break: break-all;
+  display: inline-block;
+}
+.important {
+  font-weight: bold;
+}
+.transparent {
+  opacity: 0;
+}
+.result {
+  color: green;
+  font-weight: bold;
+}
+.fail {
+  color: red;
+}

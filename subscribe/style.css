@@ -1,0 +1,151 @@
+  :root {
+    position: relative;
+    min-height: 100%;
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    background: #35342f;
+    line-height: 1.15;
+  }
+  :root, a, a:link, a:visited {
+    color: #37bbe4;
+  }
+  footer a, footer a:link, footer a:visited {
+    color: #e1e0dd;
+  }
+  body {
+    min-height: 100%;
+    margin: 0;
+  }
+  iframe#modals_frame {
+    z-index:20000000;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    width:100%;
+    height:100vh;
+    overflow: scroll;
+  }
+  iframe {
+    border: 0;
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  @media screen and (min-width: 60em) {
+    header {
+      position: sticky;
+      top: 0;
+    }
+  }
+  header {
+    background: #e1e0dd;
+    font-weight: bold;
+  }
+  section.invert-colors {
+    color: #35342f;
+    background: #37bbe4;
+  }
+  section.invert-colors h1 {
+    font-weight: 300;
+  }
+  header h1 {
+    display: inline;
+  }
+  h1 {
+    margin: 0 0 0.25rem;
+  }
+  h1 small {
+    font-weight: 300;
+  }
+  dd {
+    margin-left: 0;
+  }
+  section.table-inside {
+    overflow: auto;
+  }
+  table {
+    border-spacing: 0 0.25rem;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 48em;
+    min-width: 24em;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+  }
+  th, td {
+    vertical-align: top;
+    text-align: left;
+  }
+  ul {
+    list-style-type: circle;
+  }
+  .cta p, .cta select, .cta button {
+    font-size: 1.5rem;
+  }
+  footer ul,
+  main section ul {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    display: table;
+    margin: 0 auto;
+  }
+  main section li,
+  footer li {
+    display: inline-block;
+  }
+  footer li {
+    margin: 0.5rem;
+  }
+  footer {
+    padding-bottom: 2rem;
+  }
+  li h1 {
+    height: 2rem;
+    text-align: left;
+    line-height: 2;
+  }
+  main section h1 {
+    clear: both;
+  }
+  main section li  {
+    max-width: 16em;
+    width: 16em;
+    vertical-align: top;
+  }
+  label {
+    white-space: nowrap;
+  }
+  main section li p,
+  main section td p {
+    max-width: 12em;
+    margin: 0;
+  }
+  article dt h1 {
+    margin: 1rem 0;
+  }
+  p {
+    text-align: left;
+    line-height: 1.4;
+  }
+  section {
+    margin: 0 0 0.5rem;
+  }
+  small form,
+  section form {
+    display: inline;
+  }
+  small form {
+    float: right;
+    margin-top: 0.25rem;
+  }
+  small form, small form select, small form button,
+  section form, section form select, section form button {
+    display: inline-block;
+    vertical-align: middle;
+  }

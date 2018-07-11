@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport 
+  content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name=keywords content="pocketwatch, schedule recurrent tasks, cron, timers, crontab, URLs at intervals, webhook">
+<meta name=description content="Pocketwatch can create Timers to run HTTP requests at intervals of 1 second or longer.">
+<title>Pocketwatch</title>
+<style>
+  :root {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    margin: 0;
+    background: linear-gradient(aquamarine, dodgerblue);
+    background-size: cover;
+    min-height: 100%;
+  }
+  iframe#modals_frame {
+    z-index:20000000;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    width:100%;
+    height:100vh;
+    overflow: scroll;
+  }
+  iframe {
+    border: 0;
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  main {
+    padding: 0 3rem;
+    box-shadow: 0px 1px 0px 1px grey;
+    margin-bottom: 5rem;
+  }
+  form {
+    max-width: 555px;
+  }
+</style>  
+<link rel=stylesheet href=/style.css>
+<iframe id=modals_frame name=modals src=transparent.html></iframe>
+<main>
+  <header>
+    <h1>
+      Pocketwatch Free Demo
+      <br>
+      for Product Hunt Readers
+    </h1>
+  </header>
+  <section class=sell>
+    <h1>What is Pocketwatch?</h1>
+    <dl>
+      <dt>
+        <h1>
+          Recurring job scheduling as a service
+        </h1>
+      </dt>
+      <dd>
+        <p>
+          The system is robust, fault-tolerant and scalable. Normally you can purchase either a <a href=https://api.pocketwatch.xyz>subscription</a>, or a <a href=https://pocketwatch.xyz>one-off timer</a>. But this is a free demo API key for Product Hunt readers to try it out without paying anything.
+        <p>
+          Pocketwatch provides <strong>Pocketwatch Timers</strong> which are your schedulers for recurring tasks that can issue HTTP requests at intervals as fine as 1 second, or longer.
+        <p>
+          You can use them to:
+        <ul>
+          <li>schedule recurring jobs <br> e.g. <code>POST /purge-cache every 15 minutes</code>
+          <li>schedule background tasks <br> e.g. <code>POST /check-status every 10 seconds</code>
+          <li>run jobs <br> e.g. <code>GET /tweet-web-crawl every 1 minute</code> 
+          <li>trigger recurrent workloads <br> e.g. <code>PATCH /run-chromeless-tests every 5 minutes</code>
+        </ul>
+        <p>all the things you might use <code>cron/crontab</code> for (or <code>systemd</code> timers for), but when you want it more scalable, more fault-tolerant than one machine running <code>cron</code> &mdash; you use Pocketwatch Timers.
+        <p>Just fire and forget.
+        <p>Just pick an interval (say, 3 seconds), and a duration (say 5 weeks), set your URL and HTTP method, and you're good to go. 
+      </dd>
+    </dl>
+  </section>
+  <section class=buy-interval>
+    <form target=api_output method=POST action=https://api.pocketwatch.xyz/v1/timer/new>
+      <fieldset><legend>Form D-5: free demo for Product Hunt Readers</legend>
+        <input type=hidden name=request_source value="Form D-5: free demo for Product Hunt Readers">
+        <input type=hidden name=apiKey value="i_am_ph_and_proud">
+        <p>
+          <label>This timer will make a
+            <select name=method required>
+              <option value=GET>GET</option>
+              <option value=POST>POST</option>
+            </select>
+          </label>
+          <label>
+            request to 
+            <input type=url name=url required placeholder="https://host.tld">
+          </label>
+        <p>
+          <label>every
+            <input type=number step=1.0 min=1.0 max=1000000 name=interval_unit_count required value=1>
+          </label>
+          <select name=interval_unit_type required>
+            <option value=second>seconds</option>
+            <option value=minute>minutes</option>
+            <option value=hour>hours</option>
+            <option value=day>days</option>
+            <option value=week>weeks</option>
+            <option value=month>months</option>
+          </select>
+          <label>for the next
+            <input type=number step=1.0 min=1.0 max=1000000 name=duration_unit_count required value=2>
+          </label>
+          <select name=duration_unit_type required>
+            <option value=second>seconds</option>
+            <option value=minute selected>minutes</option>
+            <option value=hour>hours</option>
+            <option value=day>days</option>
+            <option value=week>weeks</option>
+            <option value=month>months</option>
+          </select>
+        <hr>
+        <p class=txcent>
+          <button class=main-cta name=action value=execute>Run API command, using free Product Hunt demo API key</button>
+        <hr>
+        <p>
+          <label>
+            API output:
+            <iframe name=api_output srcdoc="
+              <code>create a free timer to see API output</code>
+              "></iframe>
+          </label>
+        <hr>
+        <p>
+          If you liked this demo, take a look at <a href=https://api.pocketwatch.xyz>our developer portal</a> to get your own API key by purchasing a Monthly Subscription. You can also <a href=https://dosyago-corp.github.io/pocketwatch-api/>read the docs</a>, and <a href=https://github.com/dosyago-corp/pocketwatch.js>get the client library.</a>
+        <p>
+          You can also simply purchase timers on a one-off basis, from <a href=https://pocketwatch.xyz>this page here</a>, with no subscription. 
+      </fieldset>
+    </form>
+  </section>
+  <section class=sell>
+    <dl>
+      <dt><strong>Limitations of this demo</strong>
+      <dd>
+        <p><i>
+          This demo uses an API key I set up specifically for Product Hunt readers. The key is <code>i_am_ph_and_proud</code>. To save resources, any timers created with this free demo key will only last roughly 2 weeks regardless of the maximum duration you put, and the key itself also has a maximum number of timers and hits. You can also try other HTTP methods, and include a body and <code>Content-Type</code> for the requests by using this key with the API directly. If you'd like to use the API directly, see <a href=https://dosyago-corp.github.io/pocketwatch-api/>the docs</a>, and if you use Node.js, get the <a href=https://github.com/dosyago-corp/pocketwatch.js>Node.js client library</a>. By using this demo you also agree to <a href=/terms.html>the terms</a>. If you have any issues, <a href=https://github.com/dosyago-corp/service-issues/issues>open one here</a> to let me know.
+        </i></p>
+      </dd>
+    </dl>
+  </section>
+  <footer>
+    <p>
+      <a target=_new href=https://github.com/dosyago-corp/service-issues/issues>Open an Issue</a>
+      <a target=_new href=mailto:criscanbereached+dosy.help@gmail.com?&subject=Dosy+Help+for+Pocketwatch>Email us for help</a>
+    <p>
+      <a target=_new href=https://github.com/dosyago-corp/>The Dosyago Corporation on GitHub</a>
+  </footer>
+</main>
+<script>
+  "use strict";
+  {
+    if ( location.protocol == 'http:' && location.hostname == "pocketwatch.xyz" ) {
+      console.info("Landed on HTTP, redirecting to HTTPS");
+      location.protocol = "https:";
+    }
+  }
+</script>
+

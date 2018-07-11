@@ -1,0 +1,1 @@
+gcloud beta functions deploy gstore --trigger-http

@@ -1,0 +1,40 @@
+  <link rel=stylesheet href=/modal.css>
+  <article class=modal>
+    <section class=info>
+      <p>
+        Your interval will place a ${data.method} request to ${data.url}
+        every ${data.interval_unit_count} ${data.invertal_unit_type}s, for 
+        a total of ${data.duration_unit_count} ${data.duration_unit_type}s,
+        and a total of ${data.invocations_count} invocations, with 1 occurring
+        immediately after purchase.
+      <p>
+        Do you wish to proceed to purchase, and start your interval?
+    </section>
+    <section class=control>
+      <form target=modals method=POST action=/interval/purchase_flow>
+        <p>
+          <label>
+            <input type=checkbox required name=proceed> 
+            Yes, I agree to the <a href=/terms.html>terms and conditions</a>, and 
+            I wish to proceed to purchase and start my interval.
+          </label>
+        <p>
+          <button name=action value=proceed_to_stripe_purchase>Yes, proceed to pay USD$${data.cost} now</button>
+      </form>
+      <button name=action value=change>Change interval</button>
+    </section>
+    <script>
+      "use strict";
+      {
+        const modal = document.currentScript.closest('.modal');
+        const change = modal.querySelector('button[value="change"]');
+        self.parent.document.querySelector(`iframe[name="${self.name}"]`).style.display = 'block';
+        self.addEventListener('unload', () => {
+          self.parent.document.querySelector(`iframe[name="${self.name}"]`).style.display = 'none';
+        });
+        change.onclick = () => {
+          window.history.back();
+        };
+      }
+    </script>
+  </article>

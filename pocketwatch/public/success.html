@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport 
+  content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta name=keywords content="pocketwatch, call URLs at intervals, webhook">
+<meta name=description content="Pocketwatch can create Timers to run HTTP requests at intervals of 1 second or longer.">
+<link rel=stylesheet href=/style.css>
+<title>Thank you for purchasing a Timer</title>
+<style>
+  :root {
+    position: relative;
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    height: 100%;
+    background: linear-gradient(aquamarine, dodgerblue);
+  }
+  iframe#modals_frame {
+    z-index:20000000;
+    background-color: transparent;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 0;
+    width:100%;
+    height:100vh;
+    overflow: scroll;
+  }
+  iframe {
+    border: 0;
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  main {
+    background: white;
+    padding: 0 3rem;
+    box-shadow: 0px 1px 1px 0px grey;
+  }
+</style>  
+<iframe id=modals_frame name=modals src=transparent.html></iframe>
+<main>
+  <header class=highlight>
+    <h1>
+      Thank you for purchasing a timer!
+    </h1>
+  </header>
+  <section class=info>
+    <header>
+      <h1>Where would you like to go now?</h1> 
+    </header>
+    <ul>
+      <li><a href=https://api.pocketwatch.xyz>Purchase a subscription</a>
+      <li><a href=https://pocketwatch.xyz>Purchase another Timer</a>
+      <li><a href=https://github.com/dosyago-corp/pocketwatch.js>Get the Node.js client library</a> 
+      <li><a href=https://github.com/dosyago-corp/service-issues/issues>Open an issue to get support</a>
+
+      <li><a href=mailto:criscanbereached+dosy.help@gmail.com?&subject=Dosy+Help+for+Pocketwatch>Email us for help</a>
+      <li><a href=/>Back to the main page</a>
+    </ul>
+  </section>
+  <footer>
+    <p>
+      <a target=_new href=https://github.com/dosyago-corp/>The Dosyago Corporation on GitHub</a>
+  </footer>
+</main>
+<script>
+  "use strict";
+  {
+    if ( location.protocol == 'http:' && location.hostname == "pocketwatch.xyz" ) {
+      console.info("Landed on HTTP, redirecting to HTTPS");
+      location.protocol = "https:";
+    }
+  }
+</script>
+<script>
+  "use strict";
+  {
+    const isFirefox = navigator.userAgent.toString().toLowerCase().indexOf('firefox') !== -1;
+    if ( isFirefox ) {
+      const plans = document.querySelector('table.plans');
+      plans.addEventListener('click', e => {
+        if ( e.target.matches('button.cta') ) {
+          const desired_input_id = e.target.querySelector('label').getAttribute('for');
+          const desired_input = document.getElementById(desired_input_id); 
+          desired_input.checked = true;
+        }
+      });
+    }
+  }
+</script>

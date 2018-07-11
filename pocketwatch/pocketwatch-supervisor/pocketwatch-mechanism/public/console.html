@@ -1,0 +1,33 @@
+<form method=POST action=/inbox target=output>
+  <p>
+    <input type=hidden name=keyName value=abc>
+  <p>
+    <input type=hidden name=test_generation value=true>
+  <p> 
+    <input type=text name=method value=GET>
+  <p>
+    <input type=url name=url value=http://130.211.249.107:8080/>
+  <p>
+    <button name=action value=inject>Inject</button>
+</form>
+<iframe name=output src=/></iframe>
+<script>
+  "use strict";
+  {
+    const form = document.querySelector('form');
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      const data = Array.from(form.elements).reduce( (obj,c) => (obj[c.name] = c.value,obj), {} );
+      console.log(data);
+      const r = await fetch(form.getAttribute('action'), { 
+        method: form.getAttribute('method'), 
+        body: JSON.stringify(data), 
+        headers: {
+        'content-type': 'application/json'
+        }
+      });
+      console.log(r);
+    };
+  }
+</script>
+

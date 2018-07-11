@@ -1,0 +1,45 @@
+{
+  "name": "gstore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "start": {
+      "patterns": [
+        "*"
+      ],
+      "extensions": "js,html,css",
+      "quiet": false
+    },
+    "dev": {
+      "patterns": [
+        "*"
+      ],
+      "extensions": "js,html,css",
+      "quiet": false
+    }
+  },
+  "scripts": {
+    "start": "node index.js",
+    "endless": "node ./node_modules/pm2/bin/pm2 start index.js --name gstore",
+    "postendless": "node ./node_modules/pm2/bin/pm2 logs",
+    "dev": "node server.js",
+    "watch": "npm-watch",
+    "test": "npm run watch dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.dosaygo.com:/home/git/gstore"
+  },
+  "author": "@dosy",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/datastore": "^1.4.0",
+    "@google-cloud/storage": "^1.7.0",
+    "body-parser": "^1.18.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "npm-watch": "^0.3.0"
+  }
+}
