@@ -18,8 +18,8 @@ There's 6 servies:
 - GCP Datastore (gstore)
 - Timekeeper (An EB SQS worker that runs the cron jobs and manages message delays) (pocketwatch-mechanism)
 - Supervisor (An EB SQS worker that manages the Timekeeper and makes sure all jobs that are supposed to be running are running and restarts any that have missed their calls)
-- An API services (the root director, cronstorm-services aka pocketwatch-api)
-- A one-off timer / web service (pocketwatch)
+- An API service (the root directory, cronstorm-services aka pocketwatch-api) combined with a buy a subscription flow
+- A web UI to purcahse a one-off time (pocketwatch)
 
 ## Setup
 
