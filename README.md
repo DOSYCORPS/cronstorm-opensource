@@ -10,12 +10,12 @@ external services (such as redis and datastore).
 
 ## System Overview
 
-There's 6 servies:
+There's 6 services:
 
 - redis cache (ElastiCache) (pocketwatch-cache)
 - GCP Datastore (gstore)
 - Timekeeper (An EB SQS worker that runs the cron jobs and manages message delays) (pocketwatch-mechanism)
 - Supervisor (An EB SQS worker that manages the Timekeeper and makes sure all jobs that are supposed to be running are running and restarts any that have missed their calls)
 - An API service (the root directory, cronstorm-services aka pocketwatch-api) combined with a buy a subscription flow
-- A web UI to purcahse a one-off time (pocketwatch)
+- A web UI to purcash a one-off time (pocketwatch)
 
