@@ -38,7 +38,7 @@
     "express": "^4.16.3",
     "express-basic-auth": "^1.1.5",
     "hn-api": "^0.1.5",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "npm-watch": "^0.3.0",
     "pm2": "^2.10.2",
     "request": "^2.85.0",
