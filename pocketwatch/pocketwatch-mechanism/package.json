@@ -35,7 +35,7 @@
   "dependencies": {
     "aws-sdk": "^2.224.1",
     "express": "^4.16.3",
-    "node-fetch": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "npm-watch": "^0.3.0",
     "pm2": "^2.10.2"
   }
