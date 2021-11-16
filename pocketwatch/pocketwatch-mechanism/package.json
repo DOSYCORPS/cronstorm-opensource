@@ -33,7 +33,7 @@
   "author": "@dosy",
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.224.1",
+    "aws-sdk": "^2.814.0",
     "express": "^4.16.3",
     "node-fetch": "^2.1.2",
     "npm-watch": "^0.3.0",
