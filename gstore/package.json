@@ -39,7 +39,7 @@
     "@google-cloud/storage": "^1.7.0",
     "body-parser": "^1.18.3",
     "crypto": "^1.0.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "npm-watch": "^0.3.0"
   }
 }
